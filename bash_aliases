@@ -8,6 +8,9 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 alias www="cd /var/www/"
+alias nvd="cd $HOME/.config/nvim"
+
+alias sp="nvim -O";
 
 function lh {
   if [ ! -n "$1" ]; then
@@ -21,10 +24,10 @@ alias nv="nvim"
 
 alias x="exit"
 
-alias bk="cd -"
+alias back="cd -"
 
 alias phpfix="source /var/www/phpfix.sh"
-alias vfresh="ls css/*.css *.css *.html *.php | entr reload-browser vivaldi"
+alias ffresh="ls css/*.css *.css *.html *.php | entr reload-browser Firefox"
 
 function mkcd {
   if [ ! -n "$1" ]; then
@@ -35,4 +38,3 @@ function mkcd {
     mkdir $1 && cd $1
   fi
 }
-
