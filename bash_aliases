@@ -16,7 +16,7 @@ alias nvd="cd $HOME/.config/nvim"
 
 alias nv="nvim"
 alias vi="nvim"
-alias sp="nvim -O";
+alias sp="nvim -O"
 alias fm="vifm"
 alias x="exit"
 alias q="exit"
