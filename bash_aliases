@@ -9,11 +9,6 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 alias www="cd /var/www/"
-alias koadd="cd /var/www/d/CryptoToolbox/"
-alias koadp="cd /var/www/p"
-alias koadj="cd /var/www/j"
-alias koadm="cd /var/www/j/AK/market"
-alias cryptogofer="cd /var/www/j/cryptoGofer"
 alias nvd="cd $HOME/.config/nvim"
 alias vimrc="vi $HOME/.config/nvim/init.vim"
 
