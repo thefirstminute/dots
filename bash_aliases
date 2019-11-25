@@ -1,6 +1,7 @@
 alias ud="sudo apt update && apt list --upagradable"
 alias ug="sudo apt upgrade -y"
 
+alias ~="cd ~"
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
@@ -8,9 +9,11 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 alias www="cd /var/www/"
-alias koadd="cd /var/www/d/"
+alias koadd="cd /var/www/d/CryptoToolbox/"
 alias koadp="cd /var/www/p"
 alias koadj="cd /var/www/j"
+alias koadm="cd /var/www/j/AK/market"
+alias cryptogofer="cd /var/www/j/cryptoGofer"
 alias nvd="cd $HOME/.config/nvim"
 alias vimrc="vi $HOME/.config/nvim/init.vim"
 
@@ -18,6 +21,7 @@ alias nv="nvim"
 alias vi="nvim"
 alias sp="nvim -O"
 alias fm="vifm"
+alias t="taskbook"
 alias x="exit"
 alias q="exit"
 alias back="cd -"
@@ -28,9 +32,10 @@ alias l="ls -phAGLl --group-directories-first --color=always | awk '{printf \"%-
 ##alias l="ls -AFoqv --color --group-directories-first | tail -n +2 && find -maxdepth 1 -type f -printf '%s\n' | awk '{total+=$1} END {print total" bytes"}'"
 
 alias phpfix="source /var/www/phpfix.sh"
-alias ffresh="ls **/*.css *.html *.php | entr /var/www/refreshr Firefox"
-alias ofresh="ls **/*.css *.html *.php | entr /var/www/refreshr Opera"
-alias cfresh="ls **/*.css *.html *.php | entr /var/www/refreshr chromium"
+alias html2php="rename 's/.html$/.php/' *.html"
+alias ffresh="ls *.css **/*.css *.html *.php | entr /var/www/refreshr Firefox"
+alias ofresh="ls *.css **/*.css *.html *.php | entr /var/www/refreshr Opera"
+alias cfresh="ls *.css **/*.css *.html *.php | entr /var/www/refreshr chromium"
 alias bs="browser-sync start --server --files \"*.html,*.php,*.css,css/*.css\""
 alias ymp3="youtube-dl --extract-audio --audio-format mp3"
 
@@ -51,4 +56,3 @@ function lh {
     cd /var/www/$1
   fi
 }
-
