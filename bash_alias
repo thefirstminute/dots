@@ -1,31 +1,60 @@
-alias q="exit"
-
 alias ~="cd ~"
 alias ..="cd .."
-alias ..2="cd ../.."
+alias ...="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 alias b="cd -"
+alias back="cd -"
 alias l="ls -phAGLl --group-directories-first --color=always | awk '{printf \"%-2s %-2s %-6s %-6s %-1s\n\", \$5, \$6, \$7, \$4, \$8}'"
+function cdl {
+  cd $1 && l
+}
 
 alias nvd="cd $HOME/.config/nvim"
 alias vimrc="vi $HOME/.config/nvim/init.vim"
-alias www="cd /var/www/"
+alias balias="vi $HOME/.bash_aliases"
+
+alias lampstart="sudo /opt/lampp/lampp start"
+alias lampstop="sudo /opt/lampp/lampp stop"
 
 alias vi="nvim"
 alias sp="nvim -O"
 
-alias phpfix="source /var/www/phpfix.sh"
+alias phpfix="source $HOME/.config/mybin/phpfix.sh"
 alias html2php="rename 's/.html$/.php/' *.html"
+# git stuff:
+alias gitit="git add . && git status && git commit"
+alias gad="git add . && git status"
+alias gco="git commit"
+
 alias ymp3="youtube-dl --extract-audio --audio-format mp3"
 
-alias rfresh="ls *.css **/*.css *.html *.php | entr /var/www/refreshr"
-alias ffresh="ls *.css **/*.css *.html *.php | entr /var/www/refreshr Firefox"
+alias rfresh="ls **/*.css inc/*.php *.css *.html *.php | entr $HOME/.config/mybin/refreshr"
+alias ffresh="ls **/*.css inc/*.php *.css *.html *.php | entr $HOME/.config/mybin/refreshr Firefox"
+#alias rfresh="ls **/*.css inc/*.php *.css *.html *.php | entr /opt/lampp/htdocs/www/refreshr"
+#alias ffresh="ls **/*.css inc/*.php *.css *.html *.php | entr /opt/lampp/htdocs/www/refreshr Firefox"
 
-alias ud="sudo apt update && apt list --upagradable"
-alias ug="sudo apt upgrade -y"
+#using function now#alias sai="sudo apt install"
+function sai {
+  sudo apt install $1 -y
+}
+alias sau="sudo apt update && apt list --upagradable"
+alias UPDATE="sudo apt update && apt list --upagradable && sudo apt upgrade"
+
+alias ray="cowsay -f `ls -1 /usr/share/cowsay/cows/ | sort -R | head -1` "
+alias q="exit"
+alias x="cowsay -f xilhouette \"bye bye\" && sleep 1 && exit"
+alias xsay="cowsay -f sexi"
+
+function tt {
+  if [ ! -n "$1" ]; then
+    wmctrl -r :ACTIVE: -N "Workie Workie Time"
+  else 
+    wmctrl -r :ACTIVE: -N "$1"
+  fi
+}
 
 function mkcd {
   if [ ! -n "$1" ]; then
@@ -37,10 +66,10 @@ function mkcd {
   fi
 }
 
-function lh {
+function www {
   if [ ! -n "$1" ]; then
-    cd /var/www/
+    cd /opt/lampp/htdocs/www/
   else
-    cd /var/www/$1
+    cd /opt/lampp/htdocs/www/$1
   fi
 }
